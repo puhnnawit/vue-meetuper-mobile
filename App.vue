@@ -1,6 +1,7 @@
 <template>
   <view class="container">
     <text class="text-color-primary">{{title}}</text>
+        
     <Hello />
   </view>
 </template>
@@ -13,9 +14,9 @@ export default {
   },
   data() {
     return {
-      title: 'Hello World2'
+      title: 'Hello World2' 
     }
-  }  
+  }
 }
 </script>
 
