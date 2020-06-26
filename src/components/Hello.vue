@@ -1,8 +1,11 @@
 <template>
     <view>
         <text class="text-color-primary">{{message}}</text>
-        <Button :title="btnMessage" ></Button>
-        <touchable-opacity ><Text>Press Here</Text></touchable-opacity>
+        <Button :title="btnMessage"
+                :on-press="handleClick" />
+        <touchable-opacity>
+            <Text>{{btnMessage}}</Text>
+        </touchable-opacity>
     </view>
 </template>
 
@@ -12,6 +15,11 @@ export default {
         return {
             message : 'Welcome to my application',
             btnMessage : 'Click Me'
+        }
+    },
+    methods: {
+        handleClick() {
+            alert("I'm clicked")
         }
     }
 }
