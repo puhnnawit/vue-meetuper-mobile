@@ -14,12 +14,14 @@ export default {
     data() {
         return {
             message : 'Welcome to my application',
-            btnMessage : 'Click Me'
+            btnMessage : 'Click Me',
+            clickCount: 0
         }
     },
     methods: {
         handleClick() {
-            alert("I'm clicked")
+            this.clickCount = this.clickCount + 1
+            alert(`I'm clicked, Click Count: ${this.clickCount}`)
         }
     }
 }
