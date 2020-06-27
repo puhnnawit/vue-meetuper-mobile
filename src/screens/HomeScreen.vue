@@ -1,5 +1,5 @@
 <template>
-  <view class="container">
+  <view>
     <text class="text-color-primary">{{title}}</text>      
     <Hello />
   </view>
