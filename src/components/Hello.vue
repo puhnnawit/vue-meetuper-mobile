@@ -1,6 +1,8 @@
 <template>
     <view>
         <text class="text-color-primary">{{message}}</text>
+        <text class="text-click-count">{{clickCount}}</text>
+        <text>{{clickMotivation}}</text>
         <Button :title="btnMessage"
                 :on-press="handleClick" />
         <touchable-opacity>
@@ -18,10 +20,18 @@ export default {
             clickCount: 0
         }
     },
+    computed: {
+        clickMotivation() {
+            if (this.clickCount < 5) {
+                return "Please click me"
+            }else {
+                return "Good job! Keep clicking"
+            }
+        }
+    },
     methods: {
         handleClick() {
-            this.clickCount = this.clickCount + 1
-            alert(`I'm clicked, Click Count: ${this.clickCount}`)
+            this.clickCount++
         }
     }
 }
@@ -30,6 +40,9 @@ export default {
 <style>
 .text-color-primary {
   color: blue;
+}
+.text-click-count {
+  font-size: 30px;
 }
 
 </style>
