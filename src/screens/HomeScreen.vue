@@ -1,7 +1,9 @@
 <template>
   <view>
-    <text class="text-color-primary">{{title}}</text>      
+    <text class="text-color-primary">{{title}}</text>
+    <text>{{testingData}}</text>    
     <Hello />
+    <button title="Go to Screen 1" :on-press="() => navigate('screen1')" />
   </view>
 </template>
 
@@ -10,6 +12,17 @@ import Hello from "../components/Hello";
 export default {
   components: {
     Hello
+  },
+  props: {
+    testingData: {
+      type: String,
+      required: false
+    },
+    navigate: {
+      navigate: Function,
+      required: true
+
+    }
   },
   data() {
     return {
